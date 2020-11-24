@@ -1,0 +1,18 @@
+def draw(vec):
+    plt.figure()
+    plt.ylabel('Y-axis')
+    plt.xlabel('X-axis')
+    ax = plt.gca()
+    ax.set_xlim([-10, 10])
+    ax.set_ylim([-10, 10])
+    plt.quiver(array[:,0],array[:,1],array[:,2],array[:,3],color='g', angles='xy', scale_units='xy',scale=1)
+    plt.show()
+def calculate_vector(lenght,angle):
+    y = lenght*math.sin(math.radians(angle))
+    x = lenght*math.cos(math.radians(angle))
+    return [x,y]
+#Example
+Ea = calculate_vector(100,90)
+Eb = calculate_vector(100,-30)
+Ec = calculate_vector(100,210)
+draw([Ea,Eb,Ec])
